@@ -1,0 +1,53 @@
+@media screen and (min-width: 744px) and (max-width: 1024px) {
+    p {
+        font-size: 2.15vw;
+        letter-spacing: -0.15vw;
+    }
+    
+    .heading-l {
+        font-size: 6.45vw;
+        letter-spacing: -0.15vw;
+    }
+    
+    .heading-m {
+        font-size: 4.85vw;
+        letter-spacing: -0.15vw;
+    }
+    
+    .heading-xs {
+        font-size: 2.15vw;
+        letter-spacing: -0.15vw;
+    }
+    
+    .heading-xxs {
+        font-size: 1.88vw;
+        letter-spacing: -0.1vw;
+    }
+}
+
+@media screen and (min-width: 0px)  and (max-width: 743px) {
+    p {
+        font-size: 5.12vw;
+        letter-spacing: -0.28vw;
+    }
+    
+    .heading-l {
+        font-size: 12.2vw;
+        letter-spacing: -0.28vw;
+    }
+    
+    .heading-m {
+        font-size: 9.16vw;
+        letter-spacing: -0.28vw;
+    }
+    
+    .heading-xs {
+        font-size: 7.12vw;
+        letter-spacing: -0.28vw;
+    }
+    
+    .heading-xxs {
+        font-size: 4.07vw;
+        letter-spacing: -0.15vw;
+    }
+}

@@ -1,0 +1,37 @@
+p {
+    font-family: 'SuisseIntlRegular';
+    font-size: 1.85vw;
+    letter-spacing: -0.08vw;
+    // max-width: 60vw;
+    // padding-left: 2vw;
+    // padding-right: 2vw;
+}
+
+.heading-l {
+    font-family: 'SuisseIntlBook';
+    font-size: 5.55vw;
+    letter-spacing: -0.08vw;
+}
+
+.heading-m {
+    font-family: 'SuisseIntlBook';
+    font-size: 3.7vw;
+    letter-spacing: -0.08vw;
+}
+
+.heading-xs {
+    font-family: 'SuisseIntlBook';
+    font-size: 2vw;
+    letter-spacing: -0.08vw;
+}
+
+.heading-xxs {
+    font-family: 'SuisseIntlRegular';
+    font-size: 1.15vw;
+    letter-spacing: -0.05vw;
+}
+
+.active{
+    color: #FF4702 !important;
+    text-decoration: underline !important;
+}

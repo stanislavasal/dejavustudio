@@ -1,0 +1,12 @@
+@import 'stylesheets/reset.scss';
+@import 'stylesheets/vars.scss';
+@import 'stylesheets/fonts.scss';
+@import 'stylesheets/basics.scss';
+@import 'stylesheets/typography.scss';
+@import 'stylesheets/colors.scss';
+
+/* адаптивы */
+@import 'stylesheets/responsive/typography.scss';
+/* адаптивы */
+
+@import 'stylesheets/index.scss';
