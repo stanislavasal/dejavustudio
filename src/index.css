@@ -4,6 +4,9 @@
 @import 'stylesheets/basics.scss';
 @import 'stylesheets/typography.scss';
 @import 'stylesheets/colors.scss';
+@import 'stylesheets/header.scss';
+@import 'stylesheets/mainpage.scss';
+@import 'stylesheets/footer.scss';
 
 /* адаптивы */
 @import 'stylesheets/responsive/typography.scss';
