@@ -10,6 +10,7 @@
     background-color: white;
     border: 2px solid black;
     border-radius: 10px;
+    margin-bottom: 3.47vw;
 }
 
 .footer-image {
@@ -31,10 +32,13 @@
 
 a {
     text-decoration: none;
-    color: black;
+    color: inherit;
+    outline: none;
+    cursor: pointer;
 }
 
 .footer-links a {
+    color: black;
     transition: color 0.1s;
 }
 
