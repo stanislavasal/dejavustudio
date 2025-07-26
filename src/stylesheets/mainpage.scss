@@ -86,19 +86,25 @@
 
 .cards-wrapper {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
     width: 93vw;
-    gap: 1.16vw;
+    gap: 1.2vw;
+    margin-bottom: 1.2vw;
 }
 
 .card {
     height: 29.6vw;
-    width: 22.5vw;
+    width: 22vw;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 1.2vw;
 }
-
 .card-background {
     position: absolute;
     top: 0;
