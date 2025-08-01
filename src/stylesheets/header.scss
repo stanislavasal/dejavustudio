@@ -1,12 +1,12 @@
 .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     position: fixed;
     top: 3.47vw;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     width: 93vw;
     height: 6.25vw;
     border-radius: 10px;

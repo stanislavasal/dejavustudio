@@ -8,9 +8,15 @@
 @import 'stylesheets/mainpage.scss';
 @import 'stylesheets/footer.scss';
 @import 'stylesheets/categories.scss';
+@import 'stylesheets/products.scss';
 
 /* адаптивы */
 @import 'stylesheets/responsive/typography.scss';
 /* адаптивы */
+
+.special-card {
+    border: 3px solid orange;
+    box-sizing: border-box;
+}
 
 @import 'stylesheets/index.scss';
