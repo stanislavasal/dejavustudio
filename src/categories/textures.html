@@ -1,17 +1,128 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Юайка</title>
-  <meta property="og:title" content="Юайка" />
-  <meta property="og:description" content="Учебник по созданию веб-интерфейсов" />
+  <title>Textures</title>
+  <meta property="og:title" content="Textures" />
+  <meta property="og:description" content="Textures page with filters" />
   <meta property="og:type" content="website" />
 </head>
-
 <body>
-  Текстуры
-</body>
+  <div class="header">
+    <div class="header-left-part">
+      <div class="sticker-bottom-short">
+        <a href="../index.html">
+          <div class="sticker-top">
+            <img class="sticker-image" src="../images/header/logo1.svg">
+          </div>
+        </a>
+      </div>
+      <div class="sticker-bottom-long"><a href="../categories/mockups.html">
+          <div class="sticker-top">
+            <p class="heading-m">Mockups</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="sticker-bottom-long">
+      <a href="../categories/textures.html">
+        <div class="sticker-top orange">
+          <p class="heading-m">Textures</p>
+        </div>
+      </a>
+    </div>
+    <div class="sticker-bottom-long">
+      <a href="../categories/collections.html">
+        <div class="sticker-top">
+          <p class="heading-m">Collections</p>
+        </div>
+      </a>
+    </div>
+    <div class="sticker-bottom-long">
+      <a href="../categories/templates.html">
+        <div class="sticker-top">
+          <p class="heading-m">Templates</p>
+        </div>
+      </a>
+    </div>
+    <div class="header-right-part">
+      <div class="search-field">
+        <input type="text" class="search-input heading-xs" placeholder="Enter your search...">
+        <img class="search-icon" src="../images/header/search.svg">
+      </div>
+      <div class="sticker-bottom-short">
+        <div class="sticker-top">
+          <img class="sticker-image" src="../images/header/cart.svg">
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <div class="main-container">
+    <div class="filters-wrapper">
+      <div class="filter" data-attr="theme">
+        <p>Themes</p>
+        <img class="filter-arrow" src="../images/categories/filterarrow.svg">
+        <div class="filter-dropdown" style="display: none;">
+          <label><input type="checkbox" value="nature"> Nature</label>
+          <label><input type="checkbox" value="tech"> Tech</label>
+          <label><input type="checkbox" value="abstract"> Abstract</label>
+        </div>
+      </div>
+    </div>
+    <div class="cards-wrapper">
+      <div class="card" data-theme="nature">
+        <div class="card-background">
+          <img src="../images/cards/card.png">
+        </div>
+        <div class="card-tags">
+          <div class="card-tag heading-xs">Nature</div>
+        </div>
+      </div>
+      <div class="card" data-theme="tech">
+        <div class="card-background">
+          <img src="../images/cards/card.png">
+        </div>
+        <div class="card-tags">
+          <div class="card-tag heading-xs">Tech</div>
+        </div>
+      </div>
+      <div class="card" data-theme="abstract">
+        <div class="card-background">
+          <img src="../images/cards/card.png">
+        </div>
+        <div class="card-tags">
+          <div class="card-tag heading-xs">Abstract</div>
+        </div>
+      </div>
+      <!-- Добавь еще карточек по аналогии, если нужно -->
+    </div>
+    <div class="heading-l loadmore">(Load more)</div>
+  </div>
+  <div class="footer">
+    <img class="footer-image" src="../images/footer/logo.svg">
+    <div class="footer-links-wrapper">
+      <div class="footer-links">
+        <p><a href="../categories/mockups.html">all mockups</a></p>
+        <p><a href="../categories/collections.html">collections</a></p>
+        <p><a href="../legals/index-license.html">license</a></p>
+        <p><a href="../legals/index-get-in-touch.html">get in touch</a></p>
+      </div>
+      <div class="footer-links">
+        <p><a href="../legals/index-privacy-policy.html">privacy policy</a></p>
+        <p><a href="../categories/templates.html">templates</a></p>
+        <p><a href="../categories/textures.html">textures</a></p>
+        <p><a href="../contacts/index.html">contacts</a></p>
+      </div>
+      <div class="footer-links">
+        <p><a href="../legals/index-refund.html">refund</a></p>
+        <p><a href="../legals/index-GCT.html">gct</a></p>
+        <p><a href="../legals/index-FAQ.html">faq</a></p>
+        <p><a href="../legals/index-legal-terms.html">legal terms</a></p>
+      </div>
+    </div>
+  </div>
+  <script src="../javascript/filterloadmore.js"></script>
+</body>
 </html>

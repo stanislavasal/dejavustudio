@@ -1,10 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Универсальный поиск всех фильтров и dropdown-меню
+    const filterBlocks = Array.from(document.querySelectorAll('.filter'));
+    const dropdowns = Array.from(document.querySelectorAll('.filter-dropdown'));
+    const cards = Array.from(document.querySelectorAll('.card'));
+    const loadMoreBtn = document.querySelector('.loadmore');
+    const CARDS_PER_PAGE = 8;
+    let shownCount = 0;
+    let filteredCards = cards;
 
-    const themeFilter = document.getElementById('themes-filter');
-    const objectFilter = document.getElementById('objects-filter');
-    const themeDropdown = document.getElementById('themes-dropdown');
-    const objectDropdown = document.getElementById('objects-dropdown');
-
+    // Показать/скрыть dropdown
     function showDropdown(filter, dropdown) {
         filter.classList.add('active');
         dropdown.style.display = 'flex';
@@ -14,37 +18,53 @@ document.addEventListener('DOMContentLoaded', function () {
         dropdown.style.display = 'none';
     }
 
-    themeFilter.addEventListener('mouseenter', () => showDropdown(themeFilter, themeDropdown));
-    themeFilter.addEventListener('mouseleave', () => hideDropdown(themeFilter, themeDropdown));
-    objectFilter.addEventListener('mouseenter', () => showDropdown(objectFilter, objectDropdown));
-    objectFilter.addEventListener('mouseleave', () => hideDropdown(objectFilter, objectDropdown));
+    // Навешиваем обработчики на все фильтры
+    filterBlocks.forEach(filter => {
+        const dropdown = filter.querySelector('.filter-dropdown');
+        if (!dropdown) return;
+        filter.addEventListener('mouseenter', () => showDropdown(filter, dropdown));
+        filter.addEventListener('mouseleave', () => hideDropdown(filter, dropdown));
+    });
 
-    const cards = Array.from(document.querySelectorAll('.card'));
-    const themeCheckboxes = themeDropdown.querySelectorAll('input[type="checkbox"]');
-    const objectCheckboxes = objectDropdown.querySelectorAll('input[type="checkbox"]');
-    const loadMoreBtn = document.querySelector('.loadmore');
-    const CARDS_PER_PAGE = 8;
-    let shownCount = 0;
-    let filteredCards = cards;
+    // Собираем все чекбоксы по фильтрам
+    function getAllCheckboxes() {
+        return filterBlocks.map(filter => Array.from(filter.querySelectorAll('input[type="checkbox"]')));
+    }
 
+    // Получить выбранные значения по каждому фильтру
     function getCheckedValues(checkboxes) {
-        return Array.from(checkboxes).filter(cb => cb.checked).map(cb => cb.value);
+        return checkboxes.filter(cb => cb.checked).map(cb => cb.value);
     }
 
+    // Подсветка выбранных фильтров
     function updateFilterHighlight() {
-        themeFilter.classList.toggle('selected', getCheckedValues(themeCheckboxes).length > 0);
-        objectFilter.classList.toggle('selected', getCheckedValues(objectCheckboxes).length > 0);
+        filterBlocks.forEach((filter, idx) => {
+            const checkboxes = Array.from(filter.querySelectorAll('input[type="checkbox"]'));
+            filter.classList.toggle('selected', getCheckedValues(checkboxes).length > 0);
+        });
     }
 
+    // Фильтрация карточек по всем фильтрам
     function filterCards(reset = true) {
-        const selectedThemes = getCheckedValues(themeCheckboxes);
-        const selectedObjects = getCheckedValues(objectCheckboxes);
+        const allCheckboxGroups = getAllCheckboxes();
+        const selectedValues = allCheckboxGroups.map(getCheckedValues);
+        const filterAttrs = filterBlocks.map(filter => {
+            // data-атрибут для фильтра: ищем по data-*, например data-theme, data-object, data-whatsinside
+            const dropdown = filter.querySelector('.filter-dropdown');
+            if (!dropdown) return null;
+            // Берём первый чекбокс и смотрим value, чтобы понять, какой data-атрибут фильтрует
+            const firstCheckbox = dropdown.querySelector('input[type="checkbox"]');
+            if (!firstCheckbox) return null;
+            // value="nature" => ищем data-theme, если themes-filter, и т.д.
+            // Для универсальности, добавь data-attr="theme" на .filter, чтобы явно указать
+            return filter.getAttribute('data-attr');
+        });
         filteredCards = cards.filter(card => {
-            const cardTheme = card.getAttribute('data-theme');
-            const cardObject = card.getAttribute('data-object');
-            const themeMatch = selectedThemes.length === 0 || selectedThemes.includes(cardTheme);
-            const objectMatch = selectedObjects.length === 0 || selectedObjects.includes(cardObject);
-            return themeMatch && objectMatch;
+            return selectedValues.every((values, idx) => {
+                if (!filterAttrs[idx]) return true;
+                const cardAttr = card.getAttribute('data-' + filterAttrs[idx]);
+                return values.length === 0 || values.includes(cardAttr);
+            });
         });
         if (reset) shownCount = 0;
         showNextCards();
@@ -57,16 +77,18 @@ document.addEventListener('DOMContentLoaded', function () {
         toShow.forEach(card => card.style.display = '');
         shownCount = toShow.length;
         if (shownCount >= filteredCards.length) {
-            loadMoreBtn.style.display = 'none';
+            if (loadMoreBtn) loadMoreBtn.style.display = 'none';
         } else {
-            loadMoreBtn.style.display = '';
+            if (loadMoreBtn) loadMoreBtn.style.display = '';
         }
     }
 
-    filterCards(true);
+    // Навешиваем обработчики на все чекбоксы всех фильтров
+    getAllCheckboxes().forEach(checkboxes => {
+        checkboxes.forEach(cb => cb.addEventListener('change', () => filterCards(true)));
+    });
 
-    themeCheckboxes.forEach(cb => cb.addEventListener('change', () => filterCards(true)));
-    objectCheckboxes.forEach(cb => cb.addEventListener('change', () => filterCards(true)));
+    filterCards(true);
 
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', function () {
