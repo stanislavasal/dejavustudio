@@ -101,8 +101,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/search/index.html',
-      filename: './search/index.html',
+      template: './src/search/search/index.html',
+      filename: './search/search/index.html',
       chunks: ['search']
     }),
 

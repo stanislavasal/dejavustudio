@@ -13,16 +13,30 @@ let allCards = [];
 
 async function loadCards() {
     if (cardsLoaded) return;
-    try {
-        const response = await fetch('search/index.html');
-        const html = await response.text();
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = html;
-        allCards = Array.from(tempDiv.querySelectorAll('.cards-wrapper .card, .cards-wrapper a .card'));
-        cardsLoaded = true;
-    } catch (e) {
-        console.error('Ошибка загрузки карточек для поиска:', e);
+    const paths = [
+        '/search/search/index.html',
+        '../search/search/index.html',
+        '../../search/search/index.html'
+    ];
+    let html = null;
+    for (let path of paths) {
+        try {
+            const response = await fetch(path);
+            if (response.ok) {
+                html = await response.text();
+                break;
+            }
+        } catch (e) {
+        }
     }
+    if (!html) {
+        console.error('Ошибка загрузки карточек для поиска: не найден ни один путь');
+        return;
+    }
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = html;
+    allCards = Array.from(tempDiv.querySelectorAll('.cards-wrapper .card, .cards-wrapper a .card'));
+    cardsLoaded = true;
 }
 
 function getCardKeywords(card) {
