@@ -1,134 +1,85 @@
 const searchInput = document.querySelector('.search-input');
-const mainContent = document.getElementById('mainContent');
+const mainContent = document.querySelector('.main-container');
 const searchResults = document.getElementById('searchResults');
 const searchCardsContainer = document.getElementById('searchCardsContainer');
-const cover = document.querySelector('.cover');
-const loadMoreButton = document.getElementById('loadMoreButton');
+const footer = document.querySelector('.footer');
 
-const hiddenContainer = document.createElement('div');
-hiddenContainer.style.display = 'none';
-document.body.appendChild(hiddenContainer);
+if (searchCardsContainer) {
+    searchCardsContainer.classList.add('search-cards-grid');
+}
 
 let cardsLoaded = false;
+let allCards = [];
 
 async function loadCards() {
     if (cardsLoaded) return;
-
     try {
-        const response = await fetch('/search/index.html');
+        const response = await fetch('search/index.html');
         const html = await response.text();
-
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = html;
-
-        const cards = tempDiv.querySelectorAll('#articlesContainer .card');
-
-        cards.forEach(card => {
-            const cardClone = card.cloneNode(true);
-            hiddenContainer.appendChild(cardClone);
-        });
-
+        allCards = Array.from(tempDiv.querySelectorAll('.cards-wrapper .card, .cards-wrapper a .card'));
         cardsLoaded = true;
-    } catch (error) {
-        console.error('Ошибка загрузки карточек:', error);
+    } catch (e) {
+        console.error('Ошибка загрузки карточек для поиска:', e);
     }
+}
+
+function getCardKeywords(card) {
+    const tags = Array.from(card.querySelectorAll('.card-tag')).map(tag => tag.textContent.toLowerCase());
+    const dataAttrs = ['theme', 'object', 'whatsinside', 'platform'];
+    const attrs = dataAttrs.map(attr => (card.dataset[attr] || '').toLowerCase()).filter(Boolean);
+    return [...tags, ...attrs].join(' ');
 }
 
 searchInput.addEventListener('focus', loadCards, { once: true });
 
 searchInput.addEventListener('input', async function (event) {
-    const searchQuery = event.target.value.toLowerCase();
+    const query = event.target.value.trim().toLowerCase();
 
-    if (searchQuery.length > 0) {
-        if (!cardsLoaded) {
-            await loadCards();
-        }
+    if (query.length > 0) {
+        if (!cardsLoaded) await loadCards();
 
         mainContent.style.display = 'none';
         searchResults.style.display = 'flex';
-        searchResults.style.flexDirection = 'column';
-        
-        const footerHeight = document.querySelector('footer')?.offsetHeight || 100;
-        searchResults.style.minHeight = `calc(100vh - ${footerHeight}px)`;
-        
-        if (cover) {
-            cover.style.display = 'none';
-        }
-        if (loadMoreButton) {
-            loadMoreButton.style.display = 'none';
-        }
-
-        const cards = hiddenContainer.querySelectorAll('.card');
-        const filteredCards = Array.from(cards).filter(card => {
-            const title = card.querySelector('.heading-xs').textContent.toLowerCase();
-            return title.includes(searchQuery);
-        });
-
         searchCardsContainer.innerHTML = '';
-        searchCardsContainer.style.display = 'grid';
-        searchCardsContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
-        searchCardsContainer.style.gap = '20px';
-        searchCardsContainer.style.minWidth = '100%';
 
-        const searchTitle = searchResults.querySelector('.heading-m');
+        const filtered = allCards.filter(card => getCardKeywords(card).includes(query));
 
-        if (filteredCards.length === 0) {
-            if (searchTitle) {
-                searchTitle.style.textAlign = 'center';
-                searchTitle.style.width = '100%';
-                searchTitle.style.margin = '20px 0';
-            }
+        if (filtered.length === 0) {
+            searchCardsContainer.style.display = 'flex';
+            searchCardsContainer.style.justifyContent = 'center';
+            searchCardsContainer.style.alignItems = 'center';
             
-            const noResultsMessage = document.createElement('div');
-            noResultsMessage.className = 'no-results-message';
-            noResultsMessage.textContent = 'По вашему запросу ничего не найдено';
-            noResultsMessage.style.gridColumn = '1 / span 3';
-            noResultsMessage.style.textAlign = 'center';
-            noResultsMessage.style.width = '100%';
-            searchCardsContainer.appendChild(noResultsMessage);
+            const noResults = document.createElement('div');
+            noResults.className = 'no-results-message heading-l';
+            noResults.style.textAlign = 'center';
+            noResults.style.marginTop = '10vw';
+            noResults.style.marginBottom = '6.53vw';
+            noResults.style.maxWidth = 'none';
+            noResults.style.width = 'auto';
+            noResults.style.lineHeight = '1.5';
+            noResults.style.whiteSpace = 'nowrap';
+            noResults.textContent = 'No results found';
+            searchCardsContainer.appendChild(noResults);
         } else {
-            if (searchTitle) {
-                searchTitle.style.textAlign = '';
-                searchTitle.style.width = '';
-                searchTitle.style.margin = '';
-            }
+            searchCardsContainer.style.display = '';
+            searchCardsContainer.style.justifyContent = '';
+            searchCardsContainer.style.alignItems = '';
             
-            filteredCards.forEach(card => {
-                const cardClone = card.cloneNode(true);
-                cardClone.style.width = '100%';
-                cardClone.style.margin = '0';
-                searchCardsContainer.appendChild(cardClone);
-            });
-
-            const totalCards = searchCardsContainer.children.length;
-            const remainder = totalCards % 3;
-
-            if (remainder === 2) {
-                const invisibleCard = document.createElement('div');
-                invisibleCard.className = 'card invisible';
-                invisibleCard.style.visibility = 'hidden';
-                invisibleCard.style.height = '0';
-                invisibleCard.style.margin = '0';
-                searchCardsContainer.appendChild(invisibleCard);
-            } else if (remainder === 1) {
-                for (let i = 0; i < 2; i++) {
-                    const invisibleCard = document.createElement('div');
-                    invisibleCard.className = 'card invisible';
-                    invisibleCard.style.visibility = 'hidden';
-                    invisibleCard.style.height = '0';
-                    invisibleCard.style.margin = '0';
-                    searchCardsContainer.appendChild(invisibleCard);
+            filtered.forEach(card => {
+                const clone = card.cloneNode(true);
+                if (card.parentElement.tagName === 'A') {
+                    const link = card.parentElement.cloneNode(false);
+                    link.appendChild(clone);
+                    searchCardsContainer.appendChild(link);
+                } else {
+                    searchCardsContainer.appendChild(clone);
                 }
-            }
+            });
         }
     } else {
-        mainContent.style.display = 'flex';
+        mainContent.style.display = '';
         searchResults.style.display = 'none';
-        if (cover) {
-            cover.style.display = 'block';
-        }
-        if (loadMoreButton) {
-            loadMoreButton.style.display = 'block';
-        }
     }
 });
