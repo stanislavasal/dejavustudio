@@ -10,6 +10,8 @@
 @import 'stylesheets/categories.scss';
 @import 'stylesheets/products.scss';
 @import 'stylesheets/search.scss';
+@import 'stylesheets/contacts.scss';
+@import 'stylesheets/legals.scss';
 
 @import 'stylesheets/responsive/typography.scss';
 

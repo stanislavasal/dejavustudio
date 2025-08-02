@@ -1,0 +1,35 @@
+.legals-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.legals-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 6.5vw;
+    width: 45.9vw;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0.9vw;
+}
+
+.legals-text{
+    display: inline;
+    height: 28vw;
+    width: 46vw;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0.9vw;  
+}
+
+.legals-margin{
+    margin-bottom: 3.47vw;
+}
+
+.legal-link{
+    color: #FF4702;
+}
