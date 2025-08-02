@@ -58,6 +58,22 @@
     background-color: white;
     border: 2px solid black;
     border-radius: 100px;
+    cursor: pointer;
+}
+
+.product-tag:hover {
+    background-color: #C8FF03;
+    transition: background-color 0.2s;
+}
+
+.bread-crumps-link:hover {
+    color: #FF4702;
+    transition: color 0.2s;
+}
+
+.bread-crumps-active {
+    color: #FF4702;
+    cursor: pointer;
 }
 
 .product-description{
@@ -88,6 +104,12 @@
     align-items: center;
     justify-content: center;
     margin-left: auto;
+    cursor: pointer;
+}
+
+.product-button:hover {
+    background-color: #C8FF03;
+    transition: background-color 0.2s;
 }
 
 .product-file-descriptions{

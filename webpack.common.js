@@ -155,8 +155,32 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/products/index1.html',
-      filename: './products/index1.html',
+      template: './src/products/mockups/index1.html',
+      filename: './products/mockups/index1.html',
+      chunks: ['products']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/products/collections/index1.html',
+      filename: './products/collections/index1.html',
+      chunks: ['products']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/products/textures/index1.html',
+      filename: './products/textures/index1.html',
+      chunks: ['products']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/products/templates/index1.html',
+      filename: './products/templates/index1.html',
       chunks: ['products']
     }),
 
