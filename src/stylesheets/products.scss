@@ -1,17 +1,17 @@
-.product-content-container{
+.product-content-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.image-and-crumps-wrapper{
+.image-and-crumps-wrapper {
     display: flex;
     flex-direction: column;
     gap: 1.2vw;
     width: 52.6vw;
 }
 
-.product-card{
+.product-card {
     display: flex;
     flex-direction: column;
     padding: 0.9vw;
@@ -23,7 +23,7 @@
     border-radius: 10px;
 }
 
-.bread-crumps{
+.bread-crumps {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -35,22 +35,52 @@
     gap: 1.2vw;
 }
 
-.product-arrow{
+.product-arrow {
     width: 1.37vw;
 }
 
-.product-image{
+.product-image-long {
     width: 52.6vw;
     border-radius: 10px;
+    height: 64.8vw;
+    object-fit: cover;
+    transition: 0.2s;
 }
 
-.product-tags{
+.product-image {
+    width: 52.6vw;
+    border-radius: 10px;
+    height: 55vw;
+    object-fit: cover;
+    transition: 0.2s;
+}
+
+.product-thumbnails {
+    display: flex;
+    height: 8.7vw;
+    gap: 1.2vw;
+    overflow-x: auto;
+}
+
+.thumbnail {
+    height: 8.7vw;
+    width: 7.5vw;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.thumbnail.active {
+    border: 2px solid black;
+}
+
+.product-tags {
     display: flex;
     flex-direction: row;
     gap: 1.2vw;
 }
 
-.product-tag{
+.product-tag {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -76,7 +106,7 @@
     cursor: pointer;
 }
 
-.product-description{
+.product-description {
     display: flex;
     flex-direction: column;
     gap: 1.2vw;
@@ -92,7 +122,7 @@
     margin-bottom: 0.9vw;
 }
 
-.product-button{
+.product-button {
     display: flex;
     flex-direction: row;
     gap: 1.2vw;
@@ -112,21 +142,29 @@
     transition: background-color 0.2s;
 }
 
-.product-file-descriptions{
+.product-file-descriptions {
     display: flex;
     flex-direction: column;
     gap: 1.2vw;
     width: 19.5vw;
 }
 
-.product-file-description{
+.product-file-description {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.product-categories{
+.product-categories {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.product-images .product-image {
+    display: none;
+}
+
+.product-images .product-image.active {
+    display: block;
 }

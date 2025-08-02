@@ -85,3 +85,18 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+if (document.body.getAttribute('data-product-type') === 'collections') {
+    document.addEventListener('DOMContentLoaded', function() {
+        const images = document.querySelectorAll('.product-images .product-image');
+        const thumbs = document.querySelectorAll('.product-thumbnails .thumbnail');
+        thumbs.forEach((thumb, idx) => {
+            thumb.addEventListener('click', function() {
+                images.forEach(img => img.classList.remove('active'));
+                thumbs.forEach(t => t.classList.remove('active'));
+                images[idx].classList.add('active');
+                thumb.classList.add('active');
+            });
+        });
+    });
+}
