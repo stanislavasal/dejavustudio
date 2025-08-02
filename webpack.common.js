@@ -13,6 +13,7 @@ module.exports = {
     categories: './src/categories/categories.js',
     products: './src/products/products.js',
     search: './src/search/search.js',
+    legals: './src/legals/legals.js',
     contacts: './src/contacts/contacts.js'
   },
   output: {
@@ -100,8 +101,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/search/index.html',
-      filename: './search/index.html',
+      template: './src/search/search/index.html',
+      filename: './search/search/index.html',
       chunks: ['search']
     }),
 
@@ -154,9 +155,99 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/products/index1.html',
-      filename: './products/index1.html',
+      template: './src/products/mockups/index1.html',
+      filename: './products/mockups/index1.html',
       chunks: ['products']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/products/collections/index1.html',
+      filename: './products/collections/index1.html',
+      chunks: ['products']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/products/textures/index1.html',
+      filename: './products/textures/index1.html',
+      chunks: ['products']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/products/templates/index1.html',
+      filename: './products/templates/index1.html',
+      chunks: ['products']
+    }),
+
+    // Legals pages
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/legals/index-cookies-policy.html',
+      filename: './legals/index-cookies-policy.html',
+      chunks: ['legals']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/legals/index-FAQ.html',
+      filename: './legals/index-FAQ.html',
+      chunks: ['legals']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/legals/index-GCT.html',
+      filename: './legals/index-GCT.html',
+      chunks: ['legals']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/legals/index-get-in-touch.html',
+      filename: './legals/index-get-in-touch.html',
+      chunks: ['legals']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/legals/index-legal-terms.html',
+      filename: './legals/index-legal-terms.html',
+      chunks: ['legals']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/legals/index-license.html',
+      filename: './legals/index-license.html',
+      chunks: ['legals']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/legals/index-privacy-policy.html',
+      filename: './legals/index-privacy-policy.html',
+      chunks: ['legals']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/legals/index-refund.html',
+      filename: './legals/index-refund.html',
+      chunks: ['legals']
     }),
 
     // Partials

@@ -4,9 +4,13 @@
 @import 'stylesheets/basics.scss';
 @import 'stylesheets/typography.scss';
 @import 'stylesheets/colors.scss';
+@import 'stylesheets/header.scss';
+@import 'stylesheets/mainpage.scss';
+@import 'stylesheets/footer.scss';
+@import 'stylesheets/categories.scss';
+@import 'stylesheets/products.scss';
+@import 'stylesheets/search.scss';
 
-/* адаптивы */
 @import 'stylesheets/responsive/typography.scss';
-/* адаптивы */
 
 @import 'stylesheets/index.scss';

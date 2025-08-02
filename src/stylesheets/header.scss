@@ -1,0 +1,100 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    top: 3.47vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 93vw;
+    height: 6.25vw;
+    border-radius: 10px;
+    border: 2px solid black;
+    padding: 0.8vw;
+    background-color: white;
+}
+
+.header-left-part {
+    display: flex;
+    align-items: center;
+    gap: 0.85vw;
+}
+
+.header-right-part {
+    display: flex;
+    align-items: center;
+    gap: 0.85vw;
+}
+
+.sticker-bottom-short{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.35vw;
+    width: 4.35vw;
+    padding: 0.55vw;
+    border-radius: 15px;
+    box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.4);
+}
+
+.sticker-bottom-long{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.35vw;
+    min-width: 4.35vw;
+    padding: 0.35vw;
+    border-radius: 15px;
+    box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.4);
+}
+
+.sticker-top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.8vw;
+    min-width: 3.8vw;
+    border: 2px solid black;
+    border-radius: 13px;
+    padding: 0.35vw;
+    transition: background-color 0.1s ease;
+}
+
+.sticker-top:hover {
+    background-color: #C8FF03;
+}
+
+.sticker-image{
+    height: 2.77vw;
+}
+
+.search-field{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.8vw;
+    width: 23.1vw;
+    padding: 0.35vw 0.8vw;
+    border: 2px solid black;
+    border-radius: 13px;
+    background-color: white;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.search-input::placeholder {
+    color: #979797;
+}
+
+.search-icon {
+    width: 1.5vw;
+    height: 1.5vw;
+    cursor: pointer;
+}

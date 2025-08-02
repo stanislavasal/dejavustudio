@@ -1,0 +1,170 @@
+.product-content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.image-and-crumps-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2vw;
+    width: 52.6vw;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0.9vw;
+    gap: 1.8vw;
+    width: 39.2vw;
+    height: 69.7vw;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.bread-crumps {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 3.76vw;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding-left: 0.9vw;
+    gap: 1.2vw;
+}
+
+.product-arrow {
+    width: 1.37vw;
+}
+
+.product-image-long {
+    width: 52.6vw;
+    border-radius: 10px;
+    height: 64.8vw;
+    object-fit: cover;
+    transition: 0.2s;
+}
+
+.product-image {
+    width: 52.6vw;
+    border-radius: 10px;
+    height: 55vw;
+    object-fit: cover;
+    transition: 0.2s;
+}
+
+.product-thumbnails {
+    display: flex;
+    height: 8.7vw;
+    gap: 1.2vw;
+    overflow-x: auto;
+}
+
+.thumbnail {
+    height: 8.7vw;
+    width: 7.5vw;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.thumbnail.active {
+    border: 2px solid black;
+}
+
+.product-tags {
+    display: flex;
+    flex-direction: row;
+    gap: 1.2vw;
+}
+
+.product-tag {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.3vw 0.9vw 0.3vw 0.9vw;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.product-tag:hover {
+    background-color: #C8FF03;
+    transition: background-color 0.2s;
+}
+
+.bread-crumps-link:hover {
+    color: #FF4702;
+    transition: color 0.2s;
+}
+
+.bread-crumps-active {
+    color: #FF4702;
+    cursor: pointer;
+}
+
+.product-description {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2vw;
+}
+
+.product-description ul {
+    list-style-type: disc;
+    padding-left: 2.7vw;
+    margin: 0.9vw 0 0.9vw 0;
+}
+
+.product-description li {
+    margin-bottom: 0.9vw;
+}
+
+.product-button {
+    display: flex;
+    flex-direction: row;
+    gap: 1.2vw;
+    width: 19vw;
+    height: 6.1vw;
+    background-color: #FF4702;
+    border: 2px solid black;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.product-button:hover {
+    background-color: #C8FF03;
+    transition: background-color 0.2s;
+}
+
+.product-file-descriptions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2vw;
+    width: 19.5vw;
+}
+
+.product-file-description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.product-categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.product-images .product-image {
+    display: none;
+}
+
+.product-images .product-image.active {
+    display: block;
+}

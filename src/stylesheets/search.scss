@@ -1,0 +1,23 @@
+.special-card {
+    border: 3px solid orange;
+    box-sizing: border-box;
+}
+
+#searchResults {
+    display: flex;
+    width: 100%;
+}
+
+.search-cards-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 93vw;
+    gap: 1.2vw;
+    margin-bottom: 3.47vw;
+}
+
+.search-cards-grid .card {
+    height: 29.6vw;
+    width: 22.35vw;
+}
