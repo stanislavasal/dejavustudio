@@ -41,7 +41,7 @@ async function loadCards() {
 
 function getCardKeywords(card) {
     const tags = Array.from(card.querySelectorAll('.card-tag')).map(tag => tag.textContent.toLowerCase());
-    const dataAttrs = ['theme', 'object', 'whatsinside', 'platform'];
+    const dataAttrs = ['theme', 'object', 'whatsinside', 'platform', 'keywords'];
     const attrs = dataAttrs.map(attr => (card.dataset[attr] || '').toLowerCase()).filter(Boolean);
     return [...tags, ...attrs].join(' ');
 }
