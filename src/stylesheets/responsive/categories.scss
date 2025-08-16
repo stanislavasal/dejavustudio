@@ -1,0 +1,51 @@
+@media screen and (min-width: 744px) and (max-width: 1024px) {
+
+    .filters-wrapper {
+        gap: 1.2vw;
+    }
+
+    .filter {
+        width: 22.7vw;
+        border: 1px solid #000;
+        border-radius: 5px;
+    }
+
+    .filter-dropdown {
+        border: 1px solid #000;
+        border-radius: 5px;
+    }
+
+    .filter.active .filter-dropdown {
+        display: flex;
+    }
+
+    .filter-dropdown label {
+        font-size: 1.9vw;
+        letter-spacing: -0.05vw;
+        border-radius: 5px;
+    }
+
+    .filter-dropdown input[type="checkbox"] {
+        border: 1px solid #000;
+        border-radius: 2px;
+    }
+
+    .filter-dropdown input[type="checkbox"]:checked::after {
+        border-radius: 1px;
+    }
+
+    .filter p {
+        letter-spacing: -0.05vw;
+    }
+
+    .card-background img {
+        border-radius: 5px;
+    }
+    
+    .loadmore {
+        margin-bottom: 2.68vw;
+    }
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 743px) {}

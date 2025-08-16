@@ -1,0 +1,42 @@
+@media screen and (min-width: 744px) and (max-width: 1024px) {
+
+    .contacts-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .square-container {
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 36.2vw;
+        height: 31.9vw;
+        transform: rotate(10deg);
+        margin-bottom: 0;
+        margin-left: 2.5vw;
+        margin-top: 2.5vw;
+    }
+
+    .rhombus-container {
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 29.9vw;
+        height: 29.9vw;
+        transform: rotate(-45deg);
+        margin-bottom: 0;
+        margin-left: 30vw;
+        margin-top: 5vw;
+    }
+
+    .circle-container {
+        border: 1px solid black;
+        width: 41.2vw;
+        height: 41.2vw;
+        margin-bottom: 2.68vw;
+        margin-left: 53.3vw;
+        margin-top: -4vw;
+    }
+
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 743px) {}

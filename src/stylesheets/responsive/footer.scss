@@ -1,0 +1,25 @@
+@media screen and (min-width: 744px) and (max-width: 1024px) {
+    .footer {
+        height: 15.6vw;
+        width: 94.5vw;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin-bottom: 2.68vw;
+    }
+
+    .footer-image {
+        height: 11.82vw;
+        width: 13.3vw;
+    }
+
+    .footer-links-wrapper {
+        gap: 2.68vw;
+    }
+
+    .footer-links {
+        gap: 1.2vw;
+    }
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 743px) {}

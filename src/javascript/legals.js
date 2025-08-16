@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const legalsContainers = document.querySelectorAll('.legals-container');
+    
+    function isDesktop() {
+        return window.matchMedia('(min-width: 1025px)').matches;
+    }
+    
     function updateTitlePositions() {
+        if (!isDesktop()) return;
         legalsContainers.forEach((container, index) => {
             const title = container.querySelector('.legals-title');
             const text = container.querySelector('.legals-text');
@@ -38,5 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     window.addEventListener('scroll', updateTitlePositions);
+    window.addEventListener('resize', updateTitlePositions);
     updateTitlePositions();
 });

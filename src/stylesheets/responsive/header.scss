@@ -1,0 +1,53 @@
+@media screen and (min-width: 744px) and (max-width: 1024px) {
+    .header {
+        top: 2.68vw;
+        width: 94.5vw;
+        height: 6.35vw;
+        border-radius: 5px;
+        border: 1px solid black;
+    }
+    
+    .sticker-bottom-short{
+        height: 4.41vw;
+        width: 4.41vw;
+        padding: 0.4vw;
+        border-radius: 6.5px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+    }
+    
+    .sticker-bottom-long{
+        height: 4.41vw;
+        min-width: 4.41vw;
+        padding: 0.4vw;
+        border-radius: 6.5px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+    }
+    
+    .sticker-top{
+        height: 3.8vw;
+        min-width: 3.8vw;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 0.4vw;
+    }
+    
+    .sticker-image{
+        height: 2.82vw;
+    }
+    
+    .search-field{
+        height: 3.8vw;
+        width: 23.5vw;
+        border: 1px solid black;
+        border-radius: 6.5px;
+    }
+
+    .search-icon {
+        width: 1.6vw;
+        height: 1.6vw;
+    }
+}
+
+@media screen and (min-width: 0px)  and (max-width: 743px) {
+
+}

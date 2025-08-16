@@ -1,0 +1,24 @@
+@media screen and (min-width: 744px) and (max-width: 1024px) {
+
+    #searchResults {
+        display: flex;
+        width: 100%;
+    }
+    
+    .search-cards-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100vw;
+        gap: 1.2vw;
+        margin-bottom: 2.68vw;
+    }
+    
+    .search-cards-grid .card {
+        height: 30.2vw;
+        width: 22.35vw;
+    }
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 743px) {}

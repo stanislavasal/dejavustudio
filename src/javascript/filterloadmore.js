@@ -4,7 +4,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const dropdowns = Array.from(document.querySelectorAll('.filter-dropdown'));
     const cards = Array.from(document.querySelectorAll('.card'));
     const loadMoreBtn = document.querySelector('.loadmore');
-    const CARDS_PER_PAGE = 8;
+    
+    // Функция для определения количества карточек в зависимости от размера экрана
+    function getCardsPerPage() {
+        const isIpad = window.matchMedia('(min-width: 743px) and (max-width: 1025px)').matches;
+        return isIpad ? 12 : 8;
+    }
     let shownCount = 0;
     let filteredCards = cards;
 
@@ -72,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function showNextCards() {
+        const CARDS_PER_PAGE = getCardsPerPage();
         cards.forEach(card => card.style.display = 'none');
         const toShow = filteredCards.slice(0, shownCount + CARDS_PER_PAGE);
         toShow.forEach(card => card.style.display = '');
@@ -89,6 +95,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     filterCards(true);
+
+    // Обработчик изменения размера окна
+    window.addEventListener('resize', function() {
+        // Пересчитываем количество показанных карточек при изменении размера
+        const CARDS_PER_PAGE = getCardsPerPage();
+        if (shownCount > 0) {
+            // Округляем до ближайшего кратного CARDS_PER_PAGE
+            const pages = Math.ceil(shownCount / CARDS_PER_PAGE);
+            shownCount = 0;
+            for (let i = 0; i < pages; i++) {
+                showNextCards();
+            }
+        }
+    });
 
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', function () {

@@ -14,5 +14,13 @@
 @import 'stylesheets/legals.scss';
 
 @import 'stylesheets/responsive/typography.scss';
+@import 'stylesheets/responsive/mainpage.scss';
+@import 'stylesheets/responsive/header.scss';
+@import 'stylesheets/responsive/footer.scss';
+@import 'stylesheets/responsive/categories.scss';
+@import 'stylesheets/responsive/search.scss';
+@import 'stylesheets/responsive/products.scss';
+@import 'stylesheets/responsive/legals.scss';
+@import 'stylesheets/responsive/contacts.scss';
 
 @import 'stylesheets/index.scss';

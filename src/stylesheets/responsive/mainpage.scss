@@ -1,0 +1,158 @@
+@media screen and (min-width: 744px) and (max-width: 1024px) {
+    .main-container {
+        width: 94.5vw;
+        gap: 1.34vw;
+        margin-bottom: 1.34vw;
+    }
+    
+    .greetings-container {
+        gap: 1.34vw;
+    }
+    
+    .greetings-mini-container {
+        gap: 1.34vw;
+    }
+    
+    .short-title-container-left {
+        height: 6.72vw;
+        width: 30.6vw;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    
+    .long-title-container-left {
+        height: 6.72vw;
+        width: 46.6vw;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    
+    .huge-title-container {
+        height: 29.4vw;
+        width: 94.5vw;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    
+    .short-title-container-right {
+        height: 6.72vw;
+        width: 30.6vw;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin-left: 63.9vw;
+    }
+    
+    .short-text-container {
+        height: 27.4vw;
+        width: 30.6vw;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    
+    .huge-text-container {
+        height: 27.4vw;
+        width: 94.5vw;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    
+    .greetings-image {
+        border-radius: 5px;
+        height: 35.4vw;
+        width: 62.6vw;
+    }
+    
+    .cards-wrapper {
+        width: 94.5vw;
+    }
+    
+    .card {
+        height: 30.2vw;
+        width: 22.7vw;
+        border-radius: 5px;
+    }
+    
+    .card-background picture,
+    .card-background img {
+        border-radius: 5px;
+    }
+    
+    .us-images-wrapper {
+        width: 94.5vw;
+    }
+    
+    .us-image {
+        height: 27.4vw;
+        width: 46.6vw;
+        border-radius: 5px;
+    }
+    
+    .mainpage-logo {
+        height: 10.4vw;
+        width: 9.18vw;
+        margin-top: -5.5vw;
+    }
+    
+    .about-us-image {
+        width: 94.5vw;
+        height: 49.7vw;
+    }
+    
+    .about-us-block {
+        gap: 1.34vw;
+    }
+    
+    .about-us {
+        height: 24.1vw;
+        width: 30.6vw;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    
+    .start-block {
+        margin-top: 2.68vw;
+        margin-bottom: 2.68vw;
+    }
+    
+    .start-container {
+        width: 51.9vw;
+        height: 22.8vw;
+        border: 1px solid black;
+        color: white;
+        border-radius: 5px;
+    }
+    
+    .start-button {
+        width: 22.1vw;
+        height: 3.7vw;
+        border: 1px solid white;
+        border-radius: 5px;
+    }
+    
+    .start-button:hover {
+        color: #FF4702;
+        border: 1px solid #FF4702;
+    }
+    
+    .button-image {
+        width: 1.64vw;
+        height: 1.35vw;
+        background-image: url('./images/mainpage/button.svg');
+    }
+    
+    .start-button:hover .button-image {
+        background-image: url('./images/mainpage/button1.svg');
+    }
+    
+    .stickers-image {
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        width: 61.6vw;
+        height: 24.8vw;
+    }
+}
+
+@media screen and (min-width: 0px)  and (max-width: 743px) {
+
+}

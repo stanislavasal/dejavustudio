@@ -1,0 +1,72 @@
+@media screen and (min-width: 744px) and (max-width: 1024px) {
+
+    
+    .image-and-crumps-wrapper {
+        width: 52vw;
+    }
+    
+    .product-card {
+        width: 41.2vw;
+        height: 73.9vw;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    
+    .bread-crumps {
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    
+    .product-arrow {
+        width: 1.69vw;
+    }
+    
+    .product-image-long {
+        width: 52vw;
+        border-radius: 5px;
+        height: 68.8vw;
+    }
+    
+    .product-image {
+        width: 52vw;
+        border-radius: 5px;
+        height: 58.6vw;
+    }
+    
+    .product-thumbnails {
+        height: 8.87vw;
+    }
+    
+    .thumbnail {
+        height: 8.87vw;
+        width: 7.66vw;
+        border-radius: 5px;
+    }
+    
+    .thumbnail.active {
+        border: 1px solid black;
+    }
+    
+    .product-tag {
+        border: 1px solid black;
+    }
+
+    .product-button {
+        width: 19.2vw;
+        height: 6.2vw;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    
+    .product-file-descriptions {
+        width: 25vw;
+    }
+
+    .product-stickers{
+        height: 10.5vw;
+    }
+    
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 743px) {}

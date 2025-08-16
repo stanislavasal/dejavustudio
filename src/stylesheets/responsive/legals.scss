@@ -1,0 +1,22 @@
+@media screen and (min-width: 744px) and (max-width: 1024px) {
+    .legals-title{
+        height: 6.7vw;
+        width: 46.6vw;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+    
+    .legals-text{
+        height: 29.3vw;
+        width: 46.6vw;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    
+    .legals-margin{
+        margin-bottom: 2.68vw;
+    }
+    
+}
+
+@media screen and (min-width: 0px) and (max-width: 743px) {}
