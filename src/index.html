@@ -61,7 +61,31 @@
       </div>
     </div>
   </div>
-
+  <div class="header-mobile">
+    <div class="sticker-bottom-short">
+      <a href="./index.html">
+        <div class="sticker-top green">
+          <img class="sticker-image" src="./images/header/logo1.svg">
+        </div>
+      </a>
+    </div>
+    <div class="header-mobile-right-part">
+      <div class="sticker-bottom-short">
+        <a href="./index.html">
+          <div class="sticker-top green">
+            <img class="sticker-image-burger" src="./images/header/burger.svg">
+          </div>
+        </a>
+      </div>
+      <div class="sticker-bottom-short">
+        <a href="./index.html">
+          <div class="sticker-top green">
+            <img class="sticker-image" src="./images/header/cart.svg">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
   <div class="main-container">
     <div class="greetings-container">
       <div class="greetings-mini-container">
@@ -114,12 +138,16 @@
     </div>
     <div class="short-title-container-right heading-l">Our mission</div>
     <div class="huge-title-container">
-      <p class="heading-l">Transforming product design with an all-encompassing creative platform, bridging universal
+      <p class="heading-l mobile">Transforming product design with an all-encompassing creative platform, bridging universal
         demands and specialized niches.</p>
       <img class="mainpage-logo" src="./images/mainpage/logo.svg">
     </div>
     <div class="about-us-block">
-      <img class="about-us-image" src="./images/mainpage/arrows.svg">
+      <picture class="about-us-image">
+        <source media="(max-width: 743px)" srcset="./images/mainpage/mobile/arrows.svg">
+        <source media="(min-width: 744px) and (max-width: 1024px)" srcset="./images/mainpage/tablet/arrows.svg">
+        <img src="./images/mainpage/arrows.svg" alt="Arrows illustration">
+      </picture>
       <div class="about-us-container">
         <div class="about-us">
           <p class="heading-m">Precision</p>
@@ -306,12 +334,16 @@
         to meet design community demands.</p>
     </div>
     <div class="start-block">
-      <img class="stickers-image" src="./images/mainpage/stickers.svg">
+      <picture class="stickers-image">
+        <source media="(max-width: 743px)" srcset="./images/mainpage/mobile/stickers.svg">
+        <source media="(min-width: 744px) and (max-width: 1024px)" srcset="./images/mainpage/tablet/stickers.svg">
+        <img src="./images/mainpage/stickers.svg" alt="Stickers illustration">
+      </picture>
       <div class="start-container">
         <div class="heading-m">Start exploring our collections</div>
         <a href="categories/collections.html">
           <div class="start-button">
-            <p>And much more</p>
+            <p class="mobile">And much more</p>
             <div class="button-image" src="./images/mainpage/button.svg"></div>
           </div>
         </a>
@@ -327,22 +359,22 @@
     <img class="footer-image" src="./images/footer/logo.svg">
     <div class="footer-links-wrapper">
       <div class="footer-links">
-        <p><a href="categories/mockups.html">all mockups</a></p>
-        <p><a href="categories/collections.html">collections</a></p>
-        <p><a href="legals/index-license.html">license</a></p>
-        <p><a href="legals/index-get-in-touch.html">get in touch</a></p>
+        <p class="mobile"><a href="categories/mockups.html">all mockups</a></p>
+        <p class="mobile"><a href="categories/collections.html">collections</a></p>
+        <p class="mobile"><a href="legals/index-license.html">license</a></p>
+        <p class="mobile"><a href="legals/index-get-in-touch.html">get in touch</a></p>
       </div>
       <div class="footer-links">
-        <p><a href="legals/index-privacy-policy.html">privacy policy</a></p>
-        <p><a href="categories/templates.html">templates</a></p>
-        <p><a href="categories/textures.html">textures</a></p>
-        <p><a href="contacts/index.html">contacts</a></p>
+        <p class="mobile"><a href="legals/index-privacy-policy.html">privacy policy</a></p>
+        <p class="mobile"><a href="categories/templates.html">templates</a></p>
+        <p class="mobile"><a href="categories/textures.html">textures</a></p>
+        <p class="mobile"><a href="contacts/index.html">contacts</a></p>
       </div>
       <div class="footer-links">
-        <p><a href="legals/index-refund.html">refund</a></p>
-        <p><a href="legals/index-GCT.html">gct</a></p>
-        <p><a href="legals/index-FAQ.html">faq</a></p>
-        <p><a href="legals/index-legal-terms.html">legal terms</a></p>
+        <p class="mobile"><a href="legals/index-refund.html">refund</a></p>
+        <p class="mobile"><a href="legals/index-GCT.html">gct</a></p>
+        <p class="mobile"><a href="legals/index-FAQ.html">faq</a></p>
+        <p class="mobile"><a href="legals/index-legal-terms.html">legal terms</a></p>
       </div>
     </div>
   </div>

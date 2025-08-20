@@ -154,5 +154,206 @@
 }
 
 @media screen and (min-width: 0px)  and (max-width: 743px) {
+    .main-container {
+        width: 89.8vw;
+        gap: 5.12vw;
+        margin-bottom: 5.12vw;
+        margin-top: 18vw;
+    }
+    
+    .greetings-container {
+        gap: 5.12vw;
+        flex-direction: column;
+    }
+    
+    .greetings-mini-container {
+        gap: 5.12vw;
+    }
+    
+    .short-title-container-left {
+        height: 17.9vw;
+        width: 89.8vw;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+    
+    .long-title-container-left {
+        height: 17.9vw;
+        width: 89.8vw;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 2vw;
+    }
+    
+    .huge-title-container {
+        justify-content: space-between;
+        height: 100vw;
+        width: 89.8vw;
+        font-size: 12.2vw;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 2vw;
+    }
+    
+    .short-title-container-right {
+        justify-content: flex-start;
+        height: 17.9vw;
+        width: 89.8vw;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-left: 0vw;
+        padding: 2vw;
+    }
 
+    .short-title-container-left {
+        height: 17.9vw;
+        width: 89.8vw;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding-left: 2vw;
+    }
+    
+    .short-text-container {
+        height: 75.4vw;
+        width: 89.8vw;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 2vw;
+    }
+    
+    .huge-text-container {
+        height: 100vw;
+        width: 89.8vw;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 2vw;
+    }
+    
+    .greetings-image {
+        border-radius: 10px;
+        height: 118.5vw;
+        width: 89.8vw;
+    }
+    
+    .cards-wrapper {
+        width: 89.8vw;
+        gap: 5.12vw;
+    }
+    
+    .card {
+        height: 118.5vw;
+        width: 89.8vw;
+        border-radius: 10px;
+        padding: 2vw;
+    }
+    
+    .card-background picture,
+    .card-background img {
+        border-radius: 10px;
+    }
+    
+    .us-images-wrapper {
+        width: 89.8vw;
+        flex-direction: column;
+        gap: 5.12vw;
+    }
+    
+    .us-image {
+        height: 118.5vw;
+        width: 89.8vw;
+        border-radius: 10px;
+    }
+    
+    .mainpage-logo {
+        height: 35.9vw;
+        width: 31.5vw;
+        margin-top: -5.5vw;
+    }
+    
+    .about-us-image {
+        top: 66vw;
+        transform: translateX(180%);
+        width: 15.3vw;
+        // height: 118.5vw;
+    }
+    
+    .about-us-block {
+        width: 89.8vw;
+        gap: 5.12vw;
+    }
+
+    .about-us-container {
+        flex-direction: column;
+        gap: 5.12vw;
+    }
+    
+    .about-us {
+        height: 71vw;
+        width: 89.8vw;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 2vw;
+        gap: 1vw;
+    }
+    
+    .start-block {
+        margin-top: 10vw;
+        margin-bottom: 10vw;
+    }
+    
+    .start-container {
+        width: 89.8vw;
+        height: 102.5vw;
+        border: 1px solid black;
+        color: white;
+        border-radius: 10px;
+        gap: 5.12vw;
+        padding: 2vw;
+        text-align: center;
+    }
+    
+    .start-button {
+        width: 77vw;
+        height: 16.6vw;
+        border: 1px solid white;
+        border-radius: 10px;
+        padding: 2vw;
+    }
+    
+    .start-button:hover {
+        color: #FF4702;
+        border: 1px solid #FF4702;
+    }
+    
+    .button-image {
+        width: 7.37vw;
+        height: 6.1vw;
+        background-image: url('./images/mainpage/button.svg');
+    }
+    
+    .start-button:hover .button-image {
+        background-image: url('./images/mainpage/button1.svg');
+    }
+    
+    .stickers-image {
+        left: 50%;
+        top: -9vw;
+        transform: translateX(-50%);
+        width: 89.8vw;
+        height: 144.8vw;
+    }
+
+    .mobile{
+        font-size: 7.69vw !important;
+    }
+
+    .card-tags {
+        bottom: 2vw;
+        left: 2vw;
+        gap: 2vw;
+    }
+    
+    .card-tag {
+        padding: 1.5vw 4vw;
+    }
 }

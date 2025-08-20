@@ -22,4 +22,35 @@
 
 }
 
-@media screen and (min-width: 0px) and (max-width: 743px) {}
+@media screen and (min-width: 0px) and (max-width: 743px) {
+    .footer {
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 215vw;
+        width: 93vw;
+        padding: 4vw 2vw;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-bottom: 15.2vw;
+    }
+    
+    .footer-image {
+        height: 53.8vw;
+        width: 60.7vw;
+    }
+    
+    .footer-links-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 3vw;
+    }
+    
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 3vw;
+    }
+
+}

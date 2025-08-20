@@ -49,5 +49,41 @@
 }
 
 @media screen and (min-width: 0px)  and (max-width: 743px) {
+    .header {
+        display: none;
+    }
+    
+    .header-mobile {
+        display: flex;
+    }
 
+    .sticker-bottom-short{
+        height: 19.2vw;
+        width: 19.2vw;
+        padding: 1vw;
+        border-radius: 13px;
+    }
+    
+    .sticker-bottom-long{
+        height: 19.2vw;
+        min-width: 19.2vw;
+        padding: 1vw;
+        border-radius: 13px;
+    }
+    
+    .sticker-top{
+        height: 16.5vw;
+        min-width: 16.5vw;
+        border-radius: 10px;
+        padding: 1vw;
+    }
+    
+    .sticker-image{
+        height: 12.3vw;
+    }
+
+    .sticker-burger{
+        width: 8.46vw;
+    }
+    
 }

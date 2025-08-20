@@ -27,7 +27,7 @@
     gap: 0.85vw;
 }
 
-.sticker-bottom-short{
+.sticker-bottom-short {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,9 +36,10 @@
     padding: 0.55vw;
     border-radius: 15px;
     box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.4);
+    background-color: white;
 }
 
-.sticker-bottom-long{
+.sticker-bottom-long {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,9 +48,10 @@
     padding: 0.35vw;
     border-radius: 15px;
     box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.4);
+    background-color: white;
 }
 
-.sticker-top{
+.sticker-top {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,11 +67,11 @@
     background-color: #C8FF03;
 }
 
-.sticker-image{
+.sticker-image {
     height: 2.77vw;
 }
 
-.search-field{
+.search-field {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -97,4 +99,25 @@
     width: 1.5vw;
     height: 1.5vw;
     cursor: pointer;
+}
+
+.header-mobile {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 89.8vw;
+    height: 19.2vw;
+    position: fixed;
+    top: 5.12vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header-mobile-right-part {
+    display: flex;
+    flex-direction: row;
+    gap: 3.84vw;
 }
