@@ -39,4 +39,35 @@
 
 }
 
-@media screen and (min-width: 0px) and (max-width: 743px) {}
+@media screen and (min-width: 0px) and (max-width: 743px) {
+    .contacts-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20vw;
+    }
+
+    .square-container {
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 89.8vw;
+        height: 89.8vw;
+        margin-bottom: 0;
+    }
+
+    .rhombus-container {
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 65vw;
+        height: 65vw;
+        transform: rotate(-45deg);
+        margin-left: 11vw;
+        margin-bottom: 0;
+    }
+
+    .circle-container {
+        border: 1px solid black;
+        width: 89.8vw;
+        height: 89.8vw;
+        margin-bottom: 5.12vw;
+    }
+}

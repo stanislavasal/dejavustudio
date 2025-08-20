@@ -19,4 +19,32 @@
     
 }
 
-@media screen and (min-width: 0px) and (max-width: 743px) {}
+@media screen and (min-width: 0px) and (max-width: 743px) {
+    .legals-container{
+        flex-direction: column;
+        gap: 5.12vw
+    }
+    
+    .legals-title{
+        height: 17.9vw;
+        width: 89.8vw;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 2vw;  
+    }
+    
+    .legals-text{
+        width: 89.8vw;
+        height: 115vw;
+        border: 1px solid black;
+        padding: 2vw;  
+    }
+    
+    .legals-margin{
+        margin-bottom: 5.12vw;
+    }
+    
+    .legal-link{
+        color: #FF4702;
+    }
+}

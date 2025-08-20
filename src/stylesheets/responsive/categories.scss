@@ -48,4 +48,72 @@
 
 }
 
-@media screen and (min-width: 0px) and (max-width: 743px) {}
+@media screen and (min-width: 0px) and (max-width: 743px) {
+    .filters-wrapper {
+        flex-direction: column;
+        gap: 5.12vw;
+    }
+    
+    .filter {
+        width: 89.8vw;
+        height: 16.6vw;
+        border: 1px solid #000;
+        border-radius: 10px;
+        padding: 2vw;
+    }
+    
+    .filter-dropdown {
+        border: 1px solid #000;
+        border-radius: 10px;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 10;
+        margin: 0;
+        margin-top: -1vw;
+        padding: 2vw;
+        gap: 1vw;
+    }
+    
+    
+    .filter-dropdown label {
+        font-size: 7.69vw;
+        padding: 0.5vw 1vw;
+        border-radius: 10px;
+        gap: 2vw;
+    }
+    
+    .filter-dropdown input[type="checkbox"] {
+        width: 4vw;
+        height: 4vw;
+        margin-right: 1vw;
+        border: 1px solid #000;
+        border-radius: 2px;
+    }
+    
+    .filter-dropdown input[type="checkbox"]:checked {
+        border-color: #FF4702;
+        background-color: #FF4702;
+    }
+    
+    .card-tags {
+        bottom: 2vw;
+        left: 2vw;
+        gap: 2vw;
+    }
+    
+    .card-tag {
+        padding: 1.5vw 3vw;
+    }
+    
+    .loadmore {
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5.12vw;
+    }
+    
+    .loadmore:hover {
+        color: #FF4702;
+    }
+}
