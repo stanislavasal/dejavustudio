@@ -8,11 +8,11 @@ if (searchCardsContainer) {
     searchCardsContainer.classList.add('search-cards-grid');
 }
 
-let cardsLoaded = false;
-let allCards = [];
+window.cardsLoaded = false;
+window.allCards = [];
 
-async function loadCards() {
-    if (cardsLoaded) return;
+window.loadCards = async function loadCards() {
+    if (window.cardsLoaded) return;
     const paths = [
         '/search/search/index.html',
         '../search/search/index.html',
@@ -35,30 +35,30 @@ async function loadCards() {
     }
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = html;
-    allCards = Array.from(tempDiv.querySelectorAll('.cards-wrapper .card, .cards-wrapper a .card'));
-    cardsLoaded = true;
+    window.allCards = Array.from(tempDiv.querySelectorAll('.cards-wrapper .card, .cards-wrapper a .card'));
+    window.cardsLoaded = true;
 }
 
-function getCardKeywords(card) {
+window.getCardKeywords = function getCardKeywords(card) {
     const tags = Array.from(card.querySelectorAll('.card-tag')).map(tag => tag.textContent.toLowerCase());
     const dataAttrs = ['theme', 'object', 'whatsinside', 'platform', 'keywords'];
     const attrs = dataAttrs.map(attr => (card.dataset[attr] || '').toLowerCase()).filter(Boolean);
     return [...tags, ...attrs].join(' ');
 }
 
-searchInput.addEventListener('focus', loadCards, { once: true });
+searchInput.addEventListener('focus', window.loadCards, { once: true });
 
 searchInput.addEventListener('input', async function (event) {
     const query = event.target.value.trim().toLowerCase();
 
     if (query.length > 0) {
-        if (!cardsLoaded) await loadCards();
+        if (!window.cardsLoaded) await window.loadCards();
 
         mainContent.style.display = 'none';
         searchResults.style.display = 'flex';
         searchCardsContainer.innerHTML = '';
 
-        const filtered = allCards.filter(card => getCardKeywords(card).includes(query));
+        const filtered = window.allCards.filter(card => window.getCardKeywords(card).includes(query));
 
         if (filtered.length === 0) {
             searchCardsContainer.style.display = 'flex';
