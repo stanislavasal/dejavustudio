@@ -6,6 +6,7 @@
 
     .filter {
         width: 22.7vw;
+        height: 4vw;
         border: 1px solid #000;
         border-radius: 5px;
     }
@@ -13,6 +14,10 @@
     .filter-dropdown {
         border: 1px solid #000;
         border-radius: 5px;
+    }
+
+    .filter-arrow{
+        width: 1.5vw;
     }
 
     .filter.active .filter-dropdown {

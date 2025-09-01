@@ -3,13 +3,14 @@
     #searchResults {
         display: flex;
         width: 100%;
+        justify-content: center;
     }
     
     .search-cards-grid {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        width: 100vw;
+        width: 94.5vw;
         gap: 1.2vw;
         margin-bottom: 2.68vw;
     }
