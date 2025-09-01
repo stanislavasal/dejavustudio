@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Универсальный поиск всех фильтров и dropdown-меню
     const filterBlocks = Array.from(document.querySelectorAll('.filter'));
     const dropdowns = Array.from(document.querySelectorAll('.filter-dropdown'));
     const cards = Array.from(document.querySelectorAll('.card'));
     const loadMoreBtn = document.querySelector('.loadmore');
     
-    // Функция для определения количества карточек в зависимости от размера экрана
     function getCardsPerPage() {
         const isIpad = window.matchMedia('(min-width: 743px) and (max-width: 1025px)').matches;
         return isIpad ? 12 : 8;
@@ -13,35 +11,68 @@ document.addEventListener('DOMContentLoaded', function () {
     let shownCount = 0;
     let filteredCards = cards;
 
-    // Показать/скрыть dropdown
     function showDropdown(filter, dropdown) {
         filter.classList.add('active');
         dropdown.style.display = 'flex';
+        
+        if (isMobileDevice()) {
+            setTimeout(() => {
+                const dropdownHeight = dropdown.offsetHeight;
+                const vwUnit = window.innerWidth / 100;
+                const marginBottomVw = dropdownHeight / vwUnit + 2;
+                filter.style.marginBottom = `${marginBottomVw}vw`;
+            }, 50);
+        }
     }
     function hideDropdown(filter, dropdown) {
         filter.classList.remove('active');
-        dropdown.style.display = 'none';
+        
+        if (isMobileDevice()) {
+            filter.style.marginBottom = '';
+        }
+        
+        setTimeout(() => {
+            if (!filter.classList.contains('active')) {
+                dropdown.style.display = 'none';
+            }
+        }, 300);
+    }
+
+    function isMobileDevice() {
+        return window.matchMedia('(max-width: 743px)').matches;
     }
 
     // Навешиваем обработчики на все фильтры
     filterBlocks.forEach(filter => {
         const dropdown = filter.querySelector('.filter-dropdown');
         if (!dropdown) return;
-        filter.addEventListener('mouseenter', () => showDropdown(filter, dropdown));
-        filter.addEventListener('mouseleave', () => hideDropdown(filter, dropdown));
+        
+        filter.addEventListener('click', () => {
+            const isActive = filter.classList.contains('active');
+            filterBlocks.forEach(f => hideDropdown(f, f.querySelector('.filter-dropdown')));
+            if (!isActive) {
+                showDropdown(filter, dropdown);
+            }
+        });
+        
+        if (!isMobileDevice()) {
+            filter.addEventListener('mouseenter', () => {
+                if (!filter.classList.contains('active')) {
+                    showDropdown(filter, dropdown);
+                }
+            });
+            filter.addEventListener('mouseleave', () => hideDropdown(filter, dropdown));
+        }
     });
 
-    // Собираем все чекбоксы по фильтрам
     function getAllCheckboxes() {
         return filterBlocks.map(filter => Array.from(filter.querySelectorAll('input[type="checkbox"]')));
     }
 
-    // Получить выбранные значения по каждому фильтру
     function getCheckedValues(checkboxes) {
         return checkboxes.filter(cb => cb.checked).map(cb => cb.value);
     }
 
-    // Подсветка выбранных фильтров
     function updateFilterHighlight() {
         filterBlocks.forEach((filter, idx) => {
             const checkboxes = Array.from(filter.querySelectorAll('input[type="checkbox"]'));
@@ -49,19 +80,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Фильтрация карточек по всем фильтрам
     function filterCards(reset = true) {
         const allCheckboxGroups = getAllCheckboxes();
         const selectedValues = allCheckboxGroups.map(getCheckedValues);
         const filterAttrs = filterBlocks.map(filter => {
-            // data-атрибут для фильтра: ищем по data-*, например data-theme, data-object, data-whatsinside
             const dropdown = filter.querySelector('.filter-dropdown');
             if (!dropdown) return null;
-            // Берём первый чекбокс и смотрим value, чтобы понять, какой data-атрибут фильтрует
             const firstCheckbox = dropdown.querySelector('input[type="checkbox"]');
             if (!firstCheckbox) return null;
-            // value="nature" => ищем data-theme, если themes-filter, и т.д.
-            // Для универсальности, добавь data-attr="theme" на .filter, чтобы явно указать
             return filter.getAttribute('data-attr');
         });
         filteredCards = cards.filter(card => {
@@ -89,25 +115,39 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Навешиваем обработчики на все чекбоксы всех фильтров
     getAllCheckboxes().forEach(checkboxes => {
         checkboxes.forEach(cb => cb.addEventListener('change', () => filterCards(true)));
     });
 
     filterCards(true);
 
-    // Обработчик изменения размера окна
+    document.addEventListener('click', function(event) {
+        if (!isMobileDevice()) return;
+        
+        const clickedInsideFilter = filterBlocks.some(filter => filter.contains(event.target));
+        
+        if (!clickedInsideFilter) {
+            filterBlocks.forEach(filter => {
+                const dropdown = filter.querySelector('.filter-dropdown');
+                if (dropdown) hideDropdown(filter, dropdown);
+            });
+        }
+    });
+
     window.addEventListener('resize', function() {
-        // Пересчитываем количество показанных карточек при изменении размера
         const CARDS_PER_PAGE = getCardsPerPage();
         if (shownCount > 0) {
-            // Округляем до ближайшего кратного CARDS_PER_PAGE
             const pages = Math.ceil(shownCount / CARDS_PER_PAGE);
             shownCount = 0;
             for (let i = 0; i < pages; i++) {
                 showNextCards();
             }
         }
+        
+        filterBlocks.forEach(filter => {
+            const dropdown = filter.querySelector('.filter-dropdown');
+            if (dropdown) hideDropdown(filter, dropdown);
+        });
     });
 
     if (loadMoreBtn) {

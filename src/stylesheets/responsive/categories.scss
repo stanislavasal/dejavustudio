@@ -52,6 +52,7 @@
     .filters-wrapper {
         flex-direction: column;
         gap: 5.12vw;
+        position: relative;
     }
     
     .filter {
@@ -60,19 +61,38 @@
         border: 1px solid #000;
         border-radius: 10px;
         padding: 2vw;
+        position: relative;
+        transition: margin-bottom 0.3s ease, border-radius 0.3s ease;
     }
+    
+    .filter.active {
+        border-radius: 10px 10px 0 0;
+        border-bottom-color: transparent;
+    }
+    
+
     
     .filter-dropdown {
         border: 1px solid #000;
-        border-radius: 10px;
+        border-top: 1px solid #000;
+        border-radius: 0 0 10px 10px;
         position: absolute;
-        left: 0;
-        top: 100%;
+        left: -1px;
+        top: calc(100% - 1px);
         z-index: 10;
+        width: calc(100% + 2px);
         margin: 0;
-        margin-top: -1vw;
         padding: 2vw;
         gap: 1vw;
+        background: #fff;
+        transform: translateY(-10px);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    .filter.active .filter-dropdown {
+        transform: translateY(0);
+        opacity: 1;
     }
     
     
